@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% set controller = 'EditorCtrl' %}
+
+{% block scripts %}
+  <script src="/static/js/app/controllers/editor.ctrl.js"></script>
+{% endblock %}
+
+{% block content %}
+{% raw %}
+  <div pg-component-container class="app-editor-box" get-component="getComponent" pg-component-scope="export">
+    <p data-ng-show="isEmpty()" class="empty">
+      Arraste um componente de layout aqui para iniciar!
+    </p>
+  </div>
+{% endraw %}
+{% endblock %}

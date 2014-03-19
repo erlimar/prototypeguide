@@ -1,0 +1,48 @@
+<!doctype html>
+{% set app_name = 'Prototype Guide' %}
+{% set app_version = '0.0.1' %}
+{% set app_copyright = 'Copyright (c) 2014 Erlimar Silva Campos, Lucas Sena - Todos os direitos reservados' %}
+
+{% set jquery_version = '1.11.0' %}
+{% set angular_version = '1.0.8' %}
+{% set bootstrap_version = '2.3.2' %}
+{% set uibootstrap_version = '0.8.0' %}
+<html lang="en" ng-app="PrototypeGuideApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="description" content="Pretende ser um gerenciador de componentes visuais para confecção de protótipos de telas para desenvolvimento de aplicativos web">
+  <meta name="author" content="Erlimar Silva Campos, Lucas Sena">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title%}Prototype Guide - Guia de Protótip{% endblock %}</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap-{{ bootstrap_version }}.css">
+  <link rel="stylesheet" href="/static/css/bootstrap-responsive-{{ bootstrap_version }}.css">
+  <link rel="stylesheet" href="/static/css/app/main.css">
+  {% block style_block %}{# page-specific CSS #}{% endblock %}
+</head>
+<body ng-controller="MainCtrl">
+  {% include 'includes/header.html' %}
+  <div class="container-fluid" ng-style="styleContainer">
+    <div class="row-fluid">
+      <div class="span3 app-menu-box" ng-hide="fullScreen">
+      {% include 'includes/nav.html' %}
+      </div>
+
+      <div ng-class="[spanClassContent]" ng-controller="{{ controller }}">
+      {% block content %}{# Conteúdo principal #}{% endblock %}
+      </div>
+    </div>
+  </div>
+  {% include 'includes/footer.html' %}
+
+  <script src="/static/js/jquery-{{ jquery_version }}.js"></script>
+  <script src="/static/js/angular-{{ angular_version }}.js"></script>
+  <script src="/static/js/ui-bootstrap-tpls-{{ uibootstrap_version }}.min.js"></script>
+
+  <script src="/static/js/app/app.js"></script>
+  <script src="/static/js/app/directives/dragdrop.directive.js"></script>
+  <script src="/static/js/app/controllers/main.ctrl.js"></script>
+  {% block scripts %}{# Códigos JavaScript de cabeçalho #}{% endblock %}
+</body>
+</html>

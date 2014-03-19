@@ -1,0 +1,23 @@
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-hide="fullScreen">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">{{ app_name }}</a>
+          <a  href="#" class="btn btn-success btn-small pull-right" title="Modo Full Screen"
+              ng-hide="fullScreen"
+              ng-click="toggleFullScreen()">
+            <i class="icon-white icon-resize-full"></i>
+          </a>
+          
+          <p class="navbar-text pull-right" style="margin-right:20px;">
+            versão {{ app_version }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid navbar-fixed-top" style="margin-top:5px;">
+      <a  href="#" class="btn btn-inverse btn-small pull-right" title="Modo Normal"
+          ng-show="fullScreen"
+          ng-click="toggleFullScreen()">
+        <i class="icon-white icon-resize-small"></i>
+      </a>
+    </div>

@@ -1,0 +1,26 @@
+{% raw %}
+<accordion close-others="oneAtATime">
+    <accordion-group is-open="!isopen1">
+        <accordion-heading>
+            Botões
+            <i class="pull-right" ng-class="{'icon-chevron-down': isopen1, 'icon-chevron-right': !isopen1}"></i>
+        </accordion-heading>
+        <img src="/static/img/components/component-01.png" pg-component="pg.button" class="app-component-icon img-polaroid">
+        <img src="/static/img/components/component-02.png" pg-component="pg.layout.crud1" class="app-component-icon img-polaroid">
+        <img src="/static/img/components/component-03.png" pg-component="pg.alert" class="app-component-icon img-polaroid">
+        <img src="/static/img/components/component-04.png" pg-component="pg.tooltip" class="app-component-icon img-polaroid">
+        <img src="/static/img/components/component-01.png" pg-component="pg.tooltip2" class="app-component-icon img-polaroid">
+
+   </accordion-group>
+    <accordion-group is-open="isopen2">
+        <accordion-heading>
+            Layouts <i class="pull-right" ng-class="{'icon-chevron-down': isopen2, 'icon-chevron-right': !isopen2}"></i>
+        </accordion-heading>
+        <ul>
+            <li>Layout 1</li>
+            <li>Layout 2</li>
+            <li>Layout 3</li>
+        </ul>
+    </accordion-group>
+</accordion>
+{% endraw %}
